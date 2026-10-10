@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="lt">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>Pusryčių ir pietų pirkinių sąrašas</title>
+  <style>
+    :root { color-scheme: light dark; font: 17px/1.5 system-ui, sans-serif; }
+    body { max-width: 760px; margin: 0 auto; padding: 24px 16px 48px; }
+    header { margin-bottom: 1.5rem; }
+    h1 { font-size: 1.65rem; line-height: 1.2; margin: 0 0 .5rem; }
+    h2 { font-size: 1.1rem; margin: 1.5rem 0 .5rem; border-bottom: 1px solid #8886; padding-bottom: .35rem; }
+    p { margin: .4rem 0; color: color-mix(in srgb, CanvasText 75%, Canvas); }
+    ul { list-style: none; margin: 0; padding: 0; }
+    li { margin: .25rem 0; }
+    label { display: flex; align-items: flex-start; gap: .7rem; padding: .55rem .65rem; border-radius: .6rem; }
+    label:active { background: color-mix(in srgb, CanvasText 8%, Canvas); }
+    input[type="checkbox"] { width: 1.25rem; height: 1.25rem; flex: 0 0 auto; margin: .15rem 0 0; accent-color: #25845b; }
+    input:checked + span { text-decoration: line-through; opacity: .58; }
+    .tools { display: flex; gap: .65rem; flex-wrap: wrap; margin-top: 1rem; }
+    button { font: inherit; padding: .55rem .85rem; border: 1px solid #8888; border-radius: .65rem; background: Canvas; color: CanvasText; }
+    #progress { font-size: .9rem; }
+    .recipes { margin-top: 2.25rem; }
+    .recipe-card { margin: 1rem 0; padding: 1rem; border: 1px solid #8885; border-radius: 1rem; border-top: 4px solid #25845b; background: color-mix(in srgb, #25845b 5%, Canvas); }
+    .recipe-card h3 { margin: 0 0 .45rem; font-size: 1.2rem; line-height: 1.3; }
+    .recipe-meta { display: flex; gap: .5rem; flex-wrap: wrap; margin: .5rem 0 1rem; }
+    .recipe-meta span { padding: .2rem .55rem; border-radius: 999px; background: color-mix(in srgb, #25845b 13%, Canvas); font-size: .88rem; }
+    .recipe-card h4 { margin: 1rem 0 .35rem; font-size: 1rem; }
+    .recipe-card .ingredients { list-style: disc; padding-left: 1.3rem; }
+    .recipe-card .ingredients li { margin: .2rem 0; }
+    .recipe-card ol { padding-left: 1.5rem; }
+    .recipe-card ol li { padding-left: .2rem; margin: .55rem 0; }
+    .tip { padding: .65rem .8rem; border-radius: .65rem; background: color-mix(in srgb, CanvasText 6%, Canvas); }
+    footer { margin-top: 1.5rem; font-size: .88rem; opacity: .75; }
+    @media print { .tools, footer { display: none; } body { max-width: none; } }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Pusryčių ir pietų pirkinių sąrašas</h1>
+    <p>1 žmogui · pagal karštą sumuštinį su kiaušiniu ir kumpiu bei vištieną su ryžiais ir daržovėmis ryžių puode.</p>
+    <p id="progress" aria-live="polite"></p>
+    <div class="tools">
+      <button type="button" id="reset">Nuimti visas varneles</button>
+    </div>
+  </header>
+
+  <main>
+    <section aria-labelledby="produce">
+      <h2 id="produce">Daržovės</h2>
+      <ul>
+        <li><label><input type="checkbox"><span>1 morka (pietums reikės maždaug ½)</span></label></li>
+        <li><label><input type="checkbox"><span>1 paprika (pietums reikės maždaug ½)</span></label></li>
+      </ul>
+    </section>
+    <section aria-labelledby="bakery">
+      <h2 id="bakery">Duona</h2>
+      <ul><li><label><input type="checkbox"><span>2 riekės duonos</span></label></li></ul>
+    </section>
+    <section aria-labelledby="meat">
+      <h2 id="meat">Mėsa</h2>
+      <ul>
+        <li><label><input type="checkbox"><span>1 nedidelė vištienos filė (receptui reikės apie 100 g)</span></label></li>
+        <li><label><input type="checkbox"><span>2 riekelės virto kumpio</span></label></li>
+      </ul>
+    </section>
+    <section aria-labelledby="dairy">
+      <h2 id="dairy">Pieno produktai ir kiaušiniai</h2>
+      <ul>
+        <li><label><input type="checkbox"><span>1 kiaušinis</span></label></li>
+        <li><label><input type="checkbox"><span>1 riekelė sūrio</span></label></li>
+        <li><label><input type="checkbox"><span>Truputis sviesto</span></label></li>
+      </ul>
+    </section>
+    <section aria-labelledby="dry">
+      <h2 id="dry">Kruopos, prieskoniai ir kiti produktai</h2>
+      <ul>
+        <li><label><input type="checkbox"><span>75 g ryžių</span></label></li>
+        <li><label><input type="checkbox"><span>130 ml vandens arba sultinio</span></label></li>
+        <li><label><input type="checkbox"><span>1 a. š. aliejaus — patikrinti namuose; jei neturiu – pirkti</span></label></li>
+        <li><label><input type="checkbox"><span>½ a. š. saldžiosios paprikos — patikrinti namuose; jei neturiu – pirkti</span></label></li>
+        <li><label><input type="checkbox"><span>Druska — patikrinti namuose; jei neturiu – pirkti</span></label></li>
+        <li><label><input type="checkbox"><span>Juodieji pipirai — patikrinti namuose; jei neturiu – pirkti</span></label></li>
+      </ul>
+    </section>
+
+    <section class="recipes" aria-labelledby="recipes-title">
+      <h2 id="recipes-title">Receptai</h2>
+      <article class="recipe-card" aria-labelledby="breakfast-title">
+        <h3 id="breakfast-title">Karštas sumuštinis su kiaušiniu ir kumpiu</h3>
+        <div class="recipe-meta"><span>1 porcija</span><span>Apie 10 min.</span><span>Keptuvė</span></div>
+        <h4>Ingredientai</h4>
+        <ul class="ingredients">
+          <li>2 riekės duonos</li>
+          <li>1 kiaušinis</li>
+          <li>2 riekelės virto kumpio</li>
+          <li>1 riekelė sūrio</li>
+          <li>Truputis sviesto</li>
+          <li>Druska ir juodieji pipirai pagal skonį</li>
+        </ul>
+        <h4>Gaminimas</h4>
+        <ol>
+          <li>Keptuvėje ant vidutinės kaitros ištirpink truputį sviesto. Įmušk kiaušinį, lengvai pabarstyk druska ir pipirais. Kepk apie 2 minutes, apversk ir kepk dar 30–60 sekundžių, kol baltymas sutvirtės.</li>
+          <li>Ant vienos duonos riekės dėk kumpį, sūrį ir keptą kiaušinį, uždenk kita riekele.</li>
+          <li>Sumuštinį kepk toje pačioje keptuvėje ant vidutinės kaitros, po 2–3 minutes iš kiekvienos pusės. Apversk, kai duona taps auksinė; baigta, kai sūris išsilydys.</li>
+        </ol>
+      </article>
+
+      <article class="recipe-card" aria-labelledby="lunch-title">
+        <h3 id="lunch-title">Vištiena su ryžiais ir daržovėmis ryžių puode</h3>
+        <div class="recipe-meta"><span>1 soti porcija</span><span>10 min. paruošti · toliau gamina ryžių puodas</span><span>Ryžių puodas</span></div>
+        <h4>Ingredientai</h4>
+        <ul class="ingredients">
+          <li>100 g vištienos filė</li>
+          <li>75 g ryžių</li>
+          <li>130 ml vandens arba sultinio</li>
+          <li>½ morkos, sutarkuotos</li>
+          <li>½ paprikos, supjaustytos mažais gabalėliais</li>
+          <li>1 a. š. aliejaus</li>
+          <li>½ a. š. saldžiosios paprikos</li>
+          <li>Druska ir juodieji pipirai pagal skonį</li>
+        </ul>
+        <h4>Gaminimas</h4>
+        <ol>
+          <li>Vištieną supjaustyk nedideliais, panašaus dydžio gabalėliais. Morką sutarkuok, papriką supjaustyk.</li>
+          <li>Ryžius perplauk. Į ryžių puodą sudėk ryžius, vištieną, daržoves, vandenį arba sultinį, aliejų ir prieskonius. Lengvai išmaišyk.</li>
+          <li>Įjunk įprastą ryžių gaminimo režimą ir leisk puodui užbaigti ciklą. Patikrink didžiausią vištienos gabalėlį: jis turi būti visiškai iškepęs, be rausvumo viduje; jei turi maisto termometrą, storiausioje vietoje turi būti pasiekta 74 °C.</li>
+          <li>Jei ryžiai dar kietoki, įpilk 1–2 v. š. karšto vandens ir palik dar 5–10 minučių šilto laikymo režime. Prieš valgydamas išmaišyk.</li>
+        </ol>
+        <p class="tip"><strong>Pietų dėžutei:</strong> greitai atvėsink, laikyk šaldytuve ir prieš valgydamas gerai pašildyk.</p>
+      </article>
+    </section>
+  </main>
+
+  <footer>Pažymėjimai išsaugomi šioje naršyklėje. Atidarius sąrašą kitame įrenginyje, jie automatiškai nepersikels.</footer>
+  <script>
+    (() => {
+      const key = 'meal-planner-shopping-pusryciai-pietus-2026-10-10';
+      const boxes = [...document.querySelectorAll('input[type="checkbox"]')];
+      const progress = document.getElementById('progress');
+      const update = () => {
+        const done = boxes.filter(box => box.checked).length;
+        progress.textContent = `Pažymėta ${done} iš ${boxes.length} prekių`;
+        try { localStorage.setItem(key, JSON.stringify(boxes.map(box => box.checked))); } catch (_) {}
+      };
+      try {
+        const saved = JSON.parse(localStorage.getItem(key) || 'null');
+        if (Array.isArray(saved)) boxes.forEach((box, i) => { box.checked = Boolean(saved[i]); });
+      } catch (_) {}
+      boxes.forEach(box => box.addEventListener('change', update));
+      document.getElementById('reset').addEventListener('click', () => {
+        boxes.forEach(box => { box.checked = false; });
+        update();
+      });
+      update();
+    })();
+  </script>
+</body>
+</html>
