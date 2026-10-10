@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="lt">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rudens bigos – pirkinių sąrašas ir receptas</title>
+<style>
+:root{color-scheme:light;--ink:#29251f;--muted:#70695e;--line:#e8dfd2;--paper:#fffdf9;--accent:#8b3f26;--soft:#f5eee5;--green:#536b4b}
+*{box-sizing:border-box}body{margin:0;background:#f3eee7;color:var(--ink);font:16px/1.55 system-ui,-apple-system,"Segoe UI",sans-serif}main{max-width:820px;margin:0 auto;padding:26px 16px 56px}header{padding:26px 22px;background:var(--accent);color:white;border-radius:18px;margin-bottom:18px}header p{margin:.3rem 0 0;opacity:.9}h1{font-size:clamp(1.7rem,6vw,2.4rem);line-height:1.12;margin:0}h2{font-size:1.4rem;margin:0 0 14px}h3{font-size:1.08rem;margin:0 0 8px;color:var(--accent)}.card{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:20px;margin:14px 0;box-shadow:0 3px 14px #3b2e1b0a}.intro{color:var(--muted);margin:0}.meta{display:flex;gap:9px;flex-wrap:wrap;margin-top:14px}.pill{background:#ffffff26;border:1px solid #ffffff55;border-radius:99px;padding:4px 10px;font-size:.9rem}.controls{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin:8px 0 16px}.controls button{border:1px solid #c7b9a7;background:var(--soft);color:var(--ink);border-radius:9px;padding:8px 12px;font:inherit;cursor:pointer}.controls button:hover{background:#eadfce}.progress{font-size:.9rem;color:var(--muted)}.group{padding:13px 0;border-top:1px solid var(--line)}.group:first-of-type{border-top:0}.item{display:flex;gap:11px;align-items:flex-start;padding:6px 2px;cursor:pointer}.item input{width:20px;height:20px;margin:2px 0 0;accent-color:var(--green);flex:none}.item span{flex:1}.item input:checked+span{text-decoration:line-through;color:#898276}.qty{font-weight:650}.note{font-size:.9rem;color:var(--muted)}.recipe-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}.ingredients{margin:0;padding-left:20px}.ingredients li{margin:5px 0}.steps{margin:0;padding-left:23px}.steps li{padding-left:4px;margin:0 0 12px}.storage{background:var(--soft);border-radius:11px;padding:12px 14px;margin-top:16px}.footer{font-size:.88rem;color:var(--muted);padding:4px 2px 0}@media(max-width:620px){main{padding:14px 12px 38px}header{padding:21px 18px}.card{padding:16px}.recipe-grid{grid-template-columns:1fr;gap:10px}}
+</style>
+</head>
+<body><main>
+<header><h1>Rudens bigos</h1><p>Sotus lenkiško stiliaus kiaulienos, dešros ir kopūstų troškinys, tinkantis vėsiam vakarui.</p><div class="meta"><span class="pill">3 porcijos</span><span class="pill">apie 2 val.</span><span class="pill">Puodas + kaitlentė</span></div></header>
+<section class="card"><h2>Pirkinių sąrašas</h2><p class="intro">Pažymėk produktus telefone ar kompiuteryje. Pažymėjimai išsisaugo šio sąrašo naršyklėje ir automatiškai nesinchronizuojami su telefonu ar kitais įrenginiais.</p><div class="controls"><span class="progress" id="progress" aria-live="polite">Pažymėta 0 iš 0</span><div><button type="button" id="clear">Nuimti žymas</button> <button type="button" id="reset">Atkurti sąrašą</button></div></div>
+<div id="list">
+<div class="group"><h3>Daržovės ir vaisiai</h3>
+<label class="item"><input type="checkbox" data-id="onion"><span><span class="qty">1 vidutinis</span> svogūnas</span></label>
+<label class="item"><input type="checkbox" data-id="carrot"><span><span class="qty">1</span> morka</span></label>
+<label class="item"><input type="checkbox" data-id="garlic"><span><span class="qty">2 skiltelės</span> česnako</span></label>
+<label class="item"><input type="checkbox" data-id="cabbage"><span><span class="qty">apie 350 g</span> baltagūžio kopūsto (maždaug ¼ nedidelės galvos)</span></label>
+<label class="item"><input type="checkbox" data-id="potatoes"><span><span class="qty">450 g</span> bulvių patiekimui (nebūtina, bet sotu)</span></label>
+<label class="item"><input type="checkbox" data-id="apples"><span><span class="qty">2</span> obuoliai užkandžiui</span></label>
+</div>
+<div class="group"><h3>Mėsa ir šaldytuvo produktai</h3>
+<label class="item"><input type="checkbox" data-id="pork"><span><span class="qty">350 g</span> kiaulienos mentės arba sprandinės</span></label>
+<label class="item"><input type="checkbox" data-id="sausage"><span><span class="qty">180 g</span> rūkytos dešros</span></label>
+</div>
+<div class="group"><h3>Rauginti ir konservuoti produktai</h3>
+<label class="item"><input type="checkbox" data-id="sauerkraut"><span><span class="qty">300 g</span> raugintų kopūstų</span></label>
+<label class="item"><input type="checkbox" data-id="passata"><span><span class="qty">200 g</span> smulkintų pomidorų arba pomidorų tyrės</span></label>
+<label class="item"><input type="checkbox" data-id="stock"><span><span class="qty">200 ml</span> vištienos sultinio (arba vandens)</span></label>
+<label class="item"><input type="checkbox" data-id="prunes"><span><span class="qty">30 g</span> džiovintų slyvų be kauliukų</span></label>
+</div>
+<div class="group"><h3>Sausi produktai ir prieskoniai</h3>
+<label class="item"><input type="checkbox" data-id="oil"><span><span class="qty">1 valg. š.</span> aliejaus <span class="note">(patikrinti namuose; jei neturiu – pirkti)</span></span></label>
+<label class="item"><input type="checkbox" data-id="bay"><span><span class="qty">2</span> lauro lapai</span></label>
+<label class="item"><input type="checkbox" data-id="allspice"><span><span class="qty">3</span> kvapieji pipirai (žirneliais)</span></label>
+<label class="item"><input type="checkbox" data-id="marjoram"><span><span class="qty">1 arb. š.</span> džiovinto mairūno</span></label>
+<label class="item"><input type="checkbox" data-id="paprika"><span><span class="qty">1 arb. š.</span> rūkytos paprikos</span></label>
+<label class="item"><input type="checkbox" data-id="pepper"><span><span class="qty">¼ arb. š.</span> maltų juodųjų pipirų <span class="note">(patikrinti namuose; jei neturiu – pirkti)</span></span></label>
+<label class="item"><input type="checkbox" data-id="salt"><span><span class="qty">½ arb. š. pradžiai</span> druskos, vėliau pagal skonį <span class="note">(patikrinti namuose; jei neturiu – pirkti)</span></span></label>
+</div>
+<div class="group"><h3>Užkandžiai</h3>
+<label class="item"><input type="checkbox" data-id="peanuts"><span><span class="qty">100 g</span> sūdytų žemės riešutų</span></label>
+<label class="item"><input type="checkbox" data-id="candies"><span><span class="qty">1 nedidelė pakuotė</span> „Nomeda“ saldainių su žemės riešutų sviestu ir želė</span></label>
+</div></div></section>
+<section class="card"><h2>Receptas: bigos su kiauliena ir rūkyta dešra</h2><p class="intro">Kopūstai ir ilgai troškinama kiauliena suteikia pažįstamą, sodrų troškinio skonį, o rūkyta dešra ir slyvos prideda dūmo bei lengvo saldumo.</p><div class="recipe-grid" style="margin-top:18px"><div><h3>Ingredientai</h3><ul class="ingredients">
+<li>350 g kiaulienos mentės arba sprandinės, 2 cm kubeliais</li><li>180 g rūkytos dešros, griežinėliais</li><li>350 g baltagūžio kopūsto, plonai pjaustyto</li><li>300 g raugintų kopūstų</li><li>1 svogūnas, 1 morka, 2 česnako skiltelės</li><li>200 g smulkintų pomidorų arba pomidorų tyrės</li><li>200 ml vištienos sultinio arba vandens</li><li>30 g džiovintų slyvų, stambiai supjaustytų</li><li>1 valg. š. aliejaus</li><li>2 lauro lapai, 3 kvapieji pipirai</li><li>1 arb. š. džiovinto mairūno, 1 arb. š. rūkytos paprikos</li><li>¼ arb. š. juodųjų pipirų, ½ arb. š. druskos pradžiai</li><li>Pasirinktinai: 450 g bulvių patiekimui</li></ul></div><div><h3>Gaminimas</h3><ol class="steps">
+<li>Įkaitink puodą ant vidutinės kaitros. Įpilk aliejaus ir apkepk kiaulieną per 2–3 kartus, kol kubelių paviršius paruduos, maždaug po 3 minutes kiekvienai partijai. Išimk į lėkštę.</li>
+<li>Tame pačiame puode pakepink smulkintą svogūną ir tarkuotą morką 4 minutes, kol suminkštės. Sudėk smulkintą česnaką ir papriką, maišyk 30 sekundžių.</li>
+<li>Grąžink mėsą. Sudėk šviežią ir raugintą kopūstą, pomidorus, sultinį, slyvas, lauro lapus, kvapiuosius pipirus, mairūną, juoduosius pipirus ir druską. Išmaišyk ir užvirink.</li>
+<li>Uždenk, sumažink kaitrą iki tokios, kad vos burbuliuotų, ir troškink 75 minutes. Kas 20 minučių pamaišyk; jei dugnas sausėja, įpilk šlakelį vandens.</li>
+<li>Sudėk dešrą, vėl uždenk ir troškink dar 25–35 minutes. Patiekalas paruoštas, kai kiauliena lengvai persiskiria šakute, o kopūstai minkšti. Paragauk ir, jei reikia, įberk dar druskos.</li>
+<li>Jei patieksi su bulvėmis, tuo metu atskirame puode virink jas pasūdytame vandenyje 18–22 minutes, kol peilis lengvai smigs į storiausią bulvę. Bigos skanus ir vienas.</li>
+</ol></div></div><div class="storage"><strong>Likučiai:</strong> atvėsink per 2 valandas, laikyk uždengtą šaldytuve iki 3 dienų. Pašildyk puode ant mažos kaitros, pamaišydamas, kol visas troškinys bus garuojančiai karštas. Kitą dieną skonis dažnai būna dar sodresnis.</div></section>
+<p class="footer">Sąrašo pažymėjimai saugomi tik šiame įrenginyje ir šioje naršyklėje. Receptas pritaikytas 3 porcijoms.</p>
+</main>
+<script>
+(()=>{const key='rudens-bigos-pirkiniu-sarasas-v1';const boxes=[...document.querySelectorAll('input[type=checkbox]')];const progress=document.getElementById('progress');function read(){try{return JSON.parse(localStorage.getItem(key)||'{}')}catch{return {}}}function save(){const state={};boxes.forEach(b=>state[b.dataset.id]=b.checked);try{localStorage.setItem(key,JSON.stringify(state))}catch{}update()}function update(){const n=boxes.filter(b=>b.checked).length;progress.textContent=`Pažymėta ${n} iš ${boxes.length}`}const state=read();boxes.forEach(b=>{b.checked=Boolean(state[b.dataset.id]);b.addEventListener('change',save)});document.getElementById('clear').addEventListener('click',()=>{boxes.forEach(b=>b.checked=false);save()});document.getElementById('reset').addEventListener('click',()=>{try{localStorage.removeItem(key)}catch{}boxes.forEach(b=>b.checked=false);update()});update()})();
+</script></body></html>
